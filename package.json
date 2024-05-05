@@ -1,0 +1,23 @@
+{
+  "name": "etvo-web",
+  "version": "1.0.0",
+  "description": "etvo's cool website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "laravel-mix": "^6.0.49"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.76.0",
+    "sass-loader": "^12.1.0"
+  }
+}

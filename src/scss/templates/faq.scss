@@ -1,0 +1,109 @@
+.faq {
+  $color: var(--bs-secondary);
+  $border_color: rgba(#2e282a, 0.1);
+
+  background-color: var(--bs-light);
+
+  padding: $margin-2xl 0;
+
+  .container {
+    position: relative;
+    width: 800px;
+    text-align: center;
+    color: $color;
+
+    > h2 {
+      font-size: $heading-2;
+      color: $color;
+      font-weight: 700;
+      margin-bottom: $margin-sm;
+    }
+
+    .icon {
+      font-size: $heading-2;
+    }
+
+    > p {
+      font-size: $text-3;
+      font-weight: 300;
+      margin-bottom: $margin-xl;
+    }
+  }
+
+  .faq-accordion {
+    color: $color;
+    margin: auto;
+    margin-bottom: $margin-2xl;
+    text-align: left;
+
+    &:has(.accordion-item .accordion-button:not(.collapsed)) {
+      .accordion-item .accordion-button.collapsed {
+        opacity: 0.4;
+      }
+    }
+
+    .accordion-item {
+      margin-bottom: $margin-lg;
+      border-bottom: 0;
+      background: none;
+      h2 {
+        margin-top: 0;
+      }
+      .accordion-button {
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        border: none;
+        border-bottom: solid 2px rgba($border_color, 0.1) !important;
+        font-size: $text-1;
+        font-weight: 600;
+        padding: 0 0 $margin-sm 0;
+        opacity: 0.7;
+        box-shadow: unset !important;
+        color: $color;
+
+        transition: opacity 0.2s;
+
+        &:not(.collapsed) {
+          opacity: 1;
+          color: unset;
+          background-color: unset;
+        }
+
+        &::after {
+          content: unset;
+        }
+
+        &:hover,
+        &:active {
+          background: none !important;
+          color: inherit !important;
+        }
+        &:focus {
+          outline: 0;
+          background: none !important;
+        }
+      }
+
+      .accordion-collapse {
+        .accordion-body {
+          padding: $margin-md 0 $margin-sm;
+          font-size: $text-3;
+
+          p {
+            margin-block-start: 0;
+          }
+
+          b {
+            font-weight: 600;
+          }
+
+          p:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

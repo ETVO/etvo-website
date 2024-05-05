@@ -1,0 +1,124 @@
+$margin-negative: 70px;
+$margin-xs: 4px;
+$margin-sm: 8px;
+$margin-md: 16px;
+$margin-lg: 24px;
+$margin-xl: 48px;
+$margin-2xl: 72px;
+$margin-3xl: 108px;
+
+$heading-4: 24px;
+$heading-2: 40px;
+$heading-3: 28px;
+$heading-1: 48px;
+
+$text-1: 20px;
+$text-2: 18px;
+$text-3: 16px;
+$text-4: 15px;
+$text-5: 14px;
+
+$radius-sm: 72px;
+$radius-md: 125px;
+$radius-lg: 250px;
+
+@import "./form.scss";
+
+@import "./templates/hero.scss";
+@import "./templates/benefits.scss";
+@import "./templates/cta.scss";
+@import "./templates/testimonials.scss";
+@import "./templates/faq.scss";
+@import "./templates/contact.scss";
+
+html {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.btn {
+  padding: 8px calc($margin-lg * 1.25) 6px;
+  border-radius: 50em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+.btn-primary {
+  font-size: 18px;
+  color: white;
+
+  &:hover,
+  &:active { 
+    color: white !important;
+  }
+}
+
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  @media all and (min-width: 1200px) {
+    width: 992px;
+  }
+  @media all and (min-width: 1400px) {
+    width: 1157px;
+  }
+}
+
+*::selection {
+  background-color: mix(white, #ec4e20, 20%);
+  color: white;
+  fill: white;
+}
+
+.pre-title {
+  letter-spacing: 0.3rem;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  opacity: 0.75;
+}
+
+.error {
+  background-color: #fafafa;
+  .title {
+    font-size: 7rem;
+  }
+
+  .subtitle {
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 0.4px;
+  }
+
+  p {
+    margin: 1rem 0 1.5rem;
+    letter-spacing: 0.4px;
+    font-weight: 300;
+    text-align: center;
+  }
+}
