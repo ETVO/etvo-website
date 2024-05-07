@@ -32,7 +32,9 @@
 
 </footer>
 <div class="bottom">
-  <?= date('Y'); ?> &copy; ETVO. <b>Developed by etvo.</b>
+  <?= date('Y'); ?> &copy; ETVO.&nbsp;
+  <b>Developed by etvo</b>&nbsp;
+  <small>(of course)</small>
 </div>
 
 </body>

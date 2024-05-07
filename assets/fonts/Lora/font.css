@@ -11,3 +11,10 @@
   font-weight: 700;
   font-style: italic;
 }
+/* Bold Italic */
+@font-face {
+  font-family: 'Lora';
+  src: url('./fonts/Lora-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}

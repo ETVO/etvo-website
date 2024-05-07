@@ -3,8 +3,8 @@
 <div class="benefits" id="benefits">
   <div class="container">
     <div class="content">
-      <h2>Elevate Your Online Presence</h2>
-      <p>At ETVO, our goal is simple: developing websites that deliver tangible results and drive impact toward your business goals.</p>
+      <h2><?= $benefits['title']; ?></h2>
+      <p><?= $benefits['desc']; ?></p>
     </div>
     <div class="inner-benefits">
       <?php foreach ($benefits['benefits'] as $benefit) : ?>

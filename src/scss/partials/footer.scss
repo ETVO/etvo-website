@@ -81,11 +81,18 @@ footer {
 
 .bottom {
   background-color: #030724;
-  color: white;
+  color: rgba(white, .7);
   text-align: center;
   padding: $margin-md 0;
+  letter-spacing: .6px;
+  font-size: $text-5;
 
   b {
     font-family: 'Lora', serif;
+  }
+  small {
+    font-family: 'Lora', serif;
+    font-size: 12px;
+    font-style: italic;
   }
 }

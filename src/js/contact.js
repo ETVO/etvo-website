@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var contactForm = document.getElementById('contact-form');
 
     contactForm.addEventListener('submit', function (e) {
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     clearControlFeedback();
 
                     var fields = document.querySelectorAll('.fields');
-                    fields.forEach(function(field) {
+                    fields.forEach(function (field) {
                         fadeOut(field);
                     });
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     if (isJSONObject(xhr.responseText)) {
                         var errors = JSON.parse(xhr.responseText);
-                        Object.keys(errors).forEach(function(key) {
+                        Object.keys(errors).forEach(function (key) {
                             var inputField = document.querySelector('[name="' + key + '"]');
                             inputField.classList.add('is-invalid');
                             var invalidFeedback = inputField.nextElementSibling;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function fadeOut(element) {
         element.style.opacity = 0;
-        setTimeout(function() {
+        setTimeout(function () {
             element.style.display = 'none';
         }, 200);
     }
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function clearControlFeedback() {
         var formControls = document.querySelectorAll('.form-control');
-        formControls.forEach(function(control) {
+        formControls.forEach(function (control) {
             control.classList.remove('is-invalid');
         });
     }
@@ -89,4 +89,25 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         return true;
     }
+
+    var selects = document.querySelectorAll("select");
+    var borderOpacity = .25;
+    var placeholderOpacity = .7;
+
+    selects.forEach(function (selectElement) {
+        var defaultOption = selectElement.querySelector("option[selected]");
+
+        if (defaultOption) {
+            selectElement.style.opacity = placeholderOpacity; // Change general opacity
+            selectElement.style.borderColor = "rgba(0, 21, 20, " + borderOpacity / placeholderOpacity + ")"; // Change border opacity   
+        }
+
+        selectElement.addEventListener("change", function () {
+            var selectedOption = this.options[this.selectedIndex];
+            if (selectedOption != defaultOption) {
+                selectElement.style.opacity = "1"; // Change general opacity
+                selectElement.style.borderColor = "rgba(0, 21, 20, " + borderOpacity + ")"; // Change border color
+            }
+        });
+    });
 });

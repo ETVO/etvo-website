@@ -12,4 +12,4 @@ import 'bootstrap/js/dist/collapse';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
 
-// import './contact.js';
+import './contact.js';

@@ -1,4 +1,3 @@
-$margin-negative: 0px;
 $margin-xs: 4px;
 $margin-sm: 8px;
 $margin-md: 16px;
@@ -7,9 +6,15 @@ $margin-xl: 48px;
 $margin-2xl: 72px;
 $margin-3xl: 108px;
 
-$heading-4: 24px;
+$margin-view: 20px;
+
+$margin-negative: 20px;
+
+$heading-6: 22px;
+$heading-5: 24px;
+$heading-4: 28px;
+$heading-3: 32px;
 $heading-2: 40px;
-$heading-3: 28px;
 $heading-1: 48px;
 
 $text-1: 20px;
@@ -61,7 +66,7 @@ a {
   color: white;
 
   &:hover,
-  &:active { 
+  &:active {
     color: white !important;
   }
 }
@@ -69,7 +74,11 @@ a {
 .container {
   padding-left: 0 !important;
   padding-right: 0 !important;
-
+  
+  @media all and (max-width: 992px) {
+    padding-left: $margin-view !important;
+    padding-right: $margin-view !important;
+  }
   @media all and (min-width: 1200px) {
     width: 992px;
   }
