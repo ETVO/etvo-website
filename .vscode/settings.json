@@ -1,11 +1,11 @@
 {
   "files.exclude": {
-    "node_modules": true,
-    ".gitignore": true,
-    ".htaccess": true,
-    "package-lock.json": true,
-    "package.json": true,
-    "webpack.mix.js": true,
-    ".vscode": true
+    "node_modules": false,
+    ".gitignore": false,
+    ".htaccess": false,
+    "package-lock.json": false,
+    "package.json": false,
+    "webpack.mix.js": false,
+    ".vscode": false
   }
 }

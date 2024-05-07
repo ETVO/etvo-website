@@ -1,7 +1,7 @@
 <?php $hero = $blocks['hero']; ?>
 
-<div class="hero">
-  <div class="container">
+<div class="hero" id="top">
+  <!-- <div class="container"> -->
     <div class="inner-hero">
       <img src="<?= $hero['image']; ?>" alt="<?= $hero['h1']; ?>">
       <div class="content">
@@ -18,5 +18,5 @@
         </a>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </div>

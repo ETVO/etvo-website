@@ -33,7 +33,7 @@ $faq = clean_and_return($faq, '_', '|');
 
 ?>
 
-<div class="faq">
+<div class="faq" id="faq">
   <div class="container">
     <div class="icon bi-chat-square-text-fill"></div>
     <h2>Frequently Asked</h2>

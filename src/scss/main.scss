@@ -1,4 +1,4 @@
-$margin-negative: 70px;
+$margin-negative: 0px;
 $margin-xs: 4px;
 $margin-sm: 8px;
 $margin-md: 16px;
@@ -23,6 +23,8 @@ $radius-md: 125px;
 $radius-lg: 250px;
 
 @import "./form.scss";
+
+@import "./partials/footer.scss";
 
 @import "./templates/hero.scss";
 @import "./templates/benefits.scss";

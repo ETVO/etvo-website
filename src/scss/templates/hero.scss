@@ -1,25 +1,32 @@
 .hero {
-  padding-top: $margin-3xl;
+  // padding-top: $margin-xl;
+  height: 100vh;
 
   background-color: white;
-  border-radius: 0 0 $radius-lg 0;
+  // border-radius: 0 0 $radius-lg 0;
 
   position: relative;
   z-index: 1;
   width: 100%;
 
   .inner-hero {
+    height: 100%;
     display: flex;
 
-    gap: $margin-2xl;
+    gap: $margin-3xl;
     align-items: center;
     justify-content: center;
 
     img {
       margin-bottom: calc(-1 * $margin-negative);
-      width: 510px;
+      width: 40vw;
+      // width: auto;
+      // height: 100vh;
       object-fit: cover;
       // border-radius: 0 $radius-md 0 0;
+
+      box-shadow: 1px 1px $margin-md rgba(#001514, .25);
+      
     }
 
     .content {
@@ -45,6 +52,24 @@
         font-weight: 500;
         margin-bottom: $margin-xl;
       }
+
+      .btn {
+        animation: glow 3s ease-in-out infinite;
+      }
     }
   }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 rgba(#ec4e20, .5);
+  }
+  50% {
+    box-shadow: 0 0 $margin-md rgba(#ec4e20, .5);
+    transform: scale(1.015);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(#ec4e20, .5);
+  }
+  
 }

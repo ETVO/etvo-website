@@ -1,0 +1,13 @@
+/* Bold */
+@font-face {
+  font-family: 'Lora';
+  src: url('./fonts/Lora-Bold.ttf');
+  font-weight: 700;
+}
+/* Bold Italic */
+@font-face {
+  font-family: 'Lora';
+  src: url('./fonts/Lora-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}

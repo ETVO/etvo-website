@@ -5,6 +5,7 @@
 <title><?= $page_title; ?></title>
 
 <link as="style" rel="stylesheet preload" href="<?= HOME_URL; ?>/assets/fonts/Inter/font.css">
+<link as="style" rel="stylesheet preload" href="<?= HOME_URL; ?>/assets/fonts/Lora/font.css">
 <link as="style" rel="stylesheet preload" href="<?= HOME_URL; ?>/assets/fonts/bootstrap-icons/bootstrap-icons.css">
 
 <link rel="stylesheet" href="<?= HOME_URL; ?>/assets/css/bootstrap.css">

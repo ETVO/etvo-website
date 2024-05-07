@@ -7,9 +7,11 @@ They are competent and professional, developing websites and systems with dedica
 They surpass all others we've encountered, in technical prowess, communication, support, and delivering results with precision."
 _Tui Barros, IMOBMARK
 |
-"The work carried out by ETVO in developing Lux's website ensured that we could convey our message clearly and effectively.
-Their expertise in SEO deserves recognition: our company ranks at the top of searches in our segment. The human component, extremely important for us, was also impeccable, with attention to every detail and rigorous fulfillment of deadlines.
-I highly recommend ETVO's services for those seeking support to grow."
+"Their expertise in SEO stands out: the well-planned design and precise information hierarchy have placed our company at the top of segment searches.
+
+The human touch was impeccable: attention to detail, meeting deadlines rigorously, and exceeding expectations throughout our partnership.
+
+ETVO's work on Lux's website ensured clear and effective messaging. I strongly recommend ETVO services for those that want business growth."
 _Vera Pereira, LUX DIGITAL
 |
 "It's been a pleasure, honestly. It's really good working with ETVO.
@@ -22,7 +24,7 @@ $testimonials = clean_and_return($testimonials, '_', '|');
 
 ?>
 
-<div class="testimonials">
+<div class="testimonials" id="testimonials">
   <div class="container">
     <div class="icon bi-quote"></div>
     <h2>See what our clients have to say about working with us</h2>
