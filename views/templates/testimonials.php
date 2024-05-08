@@ -8,9 +8,7 @@ They surpass all others we've encountered, in technical prowess, communication, 
 _Tui Barros, IMOBMARK
 |
 "Their expertise in SEO stands out: the well-planned design and precise information hierarchy have placed our company at the top of segment searches.
-
 The human touch was impeccable: attention to detail, meeting deadlines rigorously, and exceeding expectations throughout our partnership.
-
 ETVO's work on Lux's website ensured clear and effective messaging. I strongly recommend ETVO services for those that want business growth."
 _Vera Pereira, LUX DIGITAL
 |
@@ -22,25 +20,29 @@ END;
 
 $testimonials = clean_and_return($testimonials, '_', '|');
 
+$testimonials = $blocks['testimonials'];
+
 ?>
 
 <div class="testimonials" id="testimonials">
   <div class="container">
     <div class="icon bi-quote"></div>
-    <h2>See what our clients have to say about working with us</h2>
+    <h2><?= $testimonials['title']; ?></h2>
 
     <div id="carouselTestimonials" class="testimonials-slider carousel slide" style="color: <?= $color; ?>;" data-bs-ride="carousel" data-bs-interval="6500">
       <div class="carousel-inner">
-        <?php foreach ($testimonials as $key => $testimonial) : ?>
+        <?php foreach ($testimonials['testimonials'] as $key => $testimonial) :
+          $key = str_replace('testimonial:', '', $key);
+        ?>
           <div class="carousel-item testimonial <?php if ($key == 0) echo 'active' ?>">
             <div class="testimonial-text">
-              <?php $paragraphs = explode("\n", trim($testimonial[0]));
+              <?php $paragraphs = explode("\n", trim($testimonial['text']));
               foreach ($paragraphs as $p) : ?>
                 <p><?= $p; ?></p>
               <?php endforeach; ?>
             </div>
             <div class="testimonial-author">
-              <?= $testimonial[1]; ?>
+              <?= $testimonial['author']; ?>
             </div>
 
             <!-- <div id="bar-fill"></div> -->

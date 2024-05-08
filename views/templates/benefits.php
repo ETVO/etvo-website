@@ -22,5 +22,5 @@
 
 <div class="cta">
   <h2><?= $benefits['cta_title']; ?></h2>
-  <a href="<?= $benefits['cta_button']['link']; ?>" class="btn btn-primary"><?= $benefits['cta_button']['text']; ?></a>
+  <a href="<?= $benefits['cta_button']['link']; ?>" class="btn btn-primary glow"><?= $benefits['cta_button']['text']; ?></a>
 </div>

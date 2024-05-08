@@ -7,35 +7,38 @@ footer {
   a {
     display: inline-block;
     color: inherit !important;
-    transition: opacity .2s ease, transform .2s ease;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
       transform: scale(1.05) !important;
     }
   }
 
   .inner-footer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: 1fr;
+    // grid-template-columns: 1fr 1fr;
     grid-template-areas: "content social" "links links";
   }
 
   .content {
     grid-area: content;
 
-    svg {
+    img {
+      width: 50px;
+      // height: auto;
       margin-bottom: $margin-md;
     }
     h2 {
       font-weight: 700;
-      font-size: $heading-2;
+      // font-size: $heading-2;
       color: inherit;
       margin-bottom: $margin-sm;
     }
     a {
       font-weight: 400;
-      font-size: $text-3;
+      // font-size: $text-3;
     }
   }
 
@@ -44,6 +47,7 @@ footer {
     display: flex;
     flex-flow: column;
     align-self: flex-end;
+    text-align: right;
 
     h3 {
       font-weight: 600;
@@ -52,7 +56,7 @@ footer {
     }
 
     .icons {
-      font-size: $heading-4;
+      font-size: $heading-5;
       display: flex;
       gap: calc($margin-lg * 1.5);
       line-height: 1;
@@ -81,18 +85,69 @@ footer {
 
 .bottom {
   background-color: #030724;
-  color: rgba(white, .7);
+  color: rgba(white, 0.7);
   text-align: center;
   padding: $margin-md 0;
-  letter-spacing: .6px;
-  font-size: $text-5;
+  letter-spacing: 0.6px;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: $margin-md;
 
   b {
-    font-family: 'Lora', serif;
+    font-family: "Lora", serif;
   }
   small {
-    font-family: 'Lora', serif;
-    font-size: 12px;
+    font-family: "Lora", serif;
+    // font-size: 12px;
     font-style: italic;
+  }
+}
+
+@media all and (max-width: 768px) {
+  footer {
+    .links {
+      font-size: $text-5;
+    }
+  }
+}
+
+@media all and (max-width: 576px) {
+  footer {
+    .inner-footer {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: "content" "social" "links";
+      align-items: center;
+      text-align: center;
+      gap: $margin-xl;
+    }
+
+    .social {
+      text-align: center;
+      h3 {
+        font-size: $text-4;
+      }
+      .icons {
+        justify-content: center;
+      }
+    }
+
+    .links {
+      margin-top: 0;
+      flex-flow: column;
+      gap: $margin-md;
+    }
+  }
+
+  .bottom {
+    flex-flow: column;
+
+    div:nth-child(2) {
+      display: flex;
+      flex-flow: column;
+    }
   }
 }

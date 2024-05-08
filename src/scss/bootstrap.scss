@@ -7,17 +7,32 @@ $secondary: #2e282a;
 $headings-font-family: "Inter", Helvetica, sans-serif !default;
 $font-family-sans-serif: "Inter", Helvetica, sans-serif !default;
 
-$carousel-transition-duration: .8s;
-$carousel-transition:
-  transform $carousel-transition-duration ease-in-out,
-  opacity $carousel-transition-duration ease-in-out;
 
 // Configuration
 @import "~bootstrap/scss/functions";
+
+// Variable overrides
+$carousel-transition-duration: 0.8s;
+$carousel-transition:
+  transform $carousel-transition-duration ease-in-out,
+  opacity $carousel-transition-duration ease-in-out;
+  
+@import "~bootstrap/scss/variables";
+
+$h1-font-size: $font-size-base * 3;
+$h2-font-size: $font-size-base * 2.5;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$btn-font-size: $font-size-base * 1.125;
+
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
+
 
 // Layout & components
 @import "~bootstrap/scss/root";

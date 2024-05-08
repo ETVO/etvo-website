@@ -2,12 +2,39 @@
   width: 404px;
   text-align: center;
 
+  max-width: 100%;
+
   margin: $margin-3xl auto $margin-2xl;
 
   
   h2 {
-    font-size: $heading-2;
+    // font-size: $heading-2;
     font-weight: 700;
-    margin-bottom: $margin-xl;
+    max-width: 100%;
+    margin: 0 auto $margin-xl;
+  }
+
+}
+
+@media all and (max-width: 768px) {
+  .cta {
+    width: unset;
+    h2 {
+      width: 350px;
+    }
+  }
+}
+
+
+@media all and (max-width: 576px) {
+  .cta {
+    padding: 0 calc($margin-view / 2);
+    
+    h2 {
+      width: 300px;
+    }
+    .btn {
+      font-size: 1rem;
+    }
   }
 }

@@ -8,12 +8,15 @@
 
   .container {
     position: relative;
-    width: 800px;
     text-align: center;
     color: $color;
 
+    @media all and (min-width: 800px) {
+      width: 800px;
+    }
+
     > h2 {
-      font-size: $heading-2;
+      // font-size: $heading-2;
       color: $color;
       font-weight: 700;
       margin-bottom: $margin-sm;
@@ -24,7 +27,7 @@
     }
 
     > p {
-      font-size: $text-3;
+      // font-size: $text-3;
       font-weight: 300;
       margin-bottom: $margin-xl;
     }
@@ -104,6 +107,14 @@
           }
         }
       }
+    }
+  }
+}
+
+@media all and (max-width: 576px) {
+  .faq {
+    .btn {
+      font-size: 1rem;
     }
   }
 }

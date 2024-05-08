@@ -10,8 +10,10 @@ include 'templates/hero.php';
 
 include 'templates/benefits.php';
 
-// include 'templates/testimonials.php';
-// include 'templates/contact.php';
-// include 'templates/faq.php';
+include 'templates/testimonials.php';
 
-// include 'partials/footer.php';
+include 'templates/contact.php';
+
+include 'templates/faq.php';
+
+include 'partials/footer.php';
