@@ -4,6 +4,8 @@
 $content = get_data('content');
 $blocks = filter_blocks($content['blocks']);
 
+$stylesheets = ['landing.css'];
+
 include 'partials/header.php';
 
 include 'templates/hero.php';

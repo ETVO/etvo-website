@@ -32,10 +32,15 @@ $request = explode('?', $request)[0];
 //     exit;
 // }
 
+
 switch ($request) {
     case '':
     case '/':
         require __DIR__ . $viewDir . 'landing.php';
+        break;
+
+    case 'privacy-policy':
+        require __DIR__ . $viewDir . 'privacy-policy.php';
         break;
 
 

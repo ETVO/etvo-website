@@ -10,5 +10,9 @@
 
 <link rel="stylesheet" href="<?= HOME_URL; ?>/assets/css/bootstrap.css">
 <link rel="stylesheet" href="<?= HOME_URL; ?>/assets/css/main.css">
+<?php if (isset($stylesheets)) : foreach ($stylesheets as $filename) : ?>
+    <link rel="stylesheet" href="<?= HOME_URL; ?>/assets/css/<?= $filename ?>">
+<?php endforeach;
+endif; ?>
 
 <link rel="shortcut icon" href="<?= HOME_URL; ?>/assets/img/favicon.webp" type="image/webp">
