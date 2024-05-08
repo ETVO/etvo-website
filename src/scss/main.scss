@@ -7,6 +7,8 @@ $margin-2xl: 72px;
 $margin-3xl: 108px;
 
 $margin-view: 20px;
+$margin-view-xs: 4vw;
+$margin-view-xxs: 2.5vw;
 
 $margin-negative: 20px;
 
@@ -75,15 +77,27 @@ a {
   padding-left: 0 !important;
   padding-right: 0 !important;
 
-  @media all and (max-width: 992px) {
-    padding-left: $margin-view !important;
-    padding-right: $margin-view !important;
-  }
   @media all and (min-width: 1200px) {
     width: 992px;
   }
   @media all and (min-width: 1400px) {
     width: 1157px;
+  }
+  @media all and (max-width: 992px) {
+    padding-left: $margin-view !important;
+    padding-right: $margin-view !important;
+
+    @media all and (min-width: 576px) {
+      max-width: 90vw;
+    }
+  }
+  @media all and (max-width: 350px) {
+    padding-left: $margin-view-xs !important;
+    padding-right: $margin-view-xs !important;
+  }
+  @media all and (max-width: 280px) {
+    padding-left: $margin-view-xxs !important;
+    padding-right: $margin-view-xxs !important;
   }
 }
 
@@ -131,10 +145,33 @@ a {
   }
 }
 
+body.error-page {
+  background-color: var(--bs-dark);
+  color: white !important;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+
+  gap: $margin-lg;
+
+  .cta {
+    margin: unset;
+  }
+  padding: 0 calc($margin-view / 1.5);
+}
+
 .error {
-  background-color: #fafafa;
+  width: 500px;
+  max-width: 100%;
+  // padding: $margin-2xl $margin-view 0;
+  // margin: auto;
+  text-align: center;
+
   .title {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 
   .subtitle {
@@ -146,7 +183,22 @@ a {
   p {
     margin: 1rem 0 1.5rem;
     letter-spacing: 0.4px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .contact-faq-wrap {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+}
+
+br.show-mobile {
+  display: none;
+
+  @media all and (max-width: 576px) {
+    display: block;
   }
 }

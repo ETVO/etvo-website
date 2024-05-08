@@ -10,10 +10,21 @@ include 'templates/hero.php';
 
 include 'templates/benefits.php';
 
+include 'templates/cta.php';
+
 include 'templates/testimonials.php';
 
-include 'templates/contact.php';
+?>
+<div class="contact-faq-wrap">
 
-include 'templates/faq.php';
+  <?php
+
+  include 'templates/contact.php';
+
+  include 'templates/faq.php';
+  ?>
+</div>
+
+<?php
 
 include 'partials/footer.php';

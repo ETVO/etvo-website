@@ -95,6 +95,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: $margin-md;
+  font-size: $text-4;
 
   b {
     font-family: "Lora", serif;
@@ -104,6 +105,14 @@ footer {
     // font-size: 12px;
     font-style: italic;
   }
+}
+
+@media all and (max-width: 1200px) {
+@media all and (min-width: 992px) {
+  footer .container {
+    width: 800px;
+  }
+}
 }
 
 @media all and (max-width: 768px) {
@@ -143,7 +152,9 @@ footer {
   }
 
   .bottom {
+    font-size: $text-5;
     flex-flow: column;
+    padding: $margin-lg 0;
 
     div:nth-child(2) {
       display: flex;

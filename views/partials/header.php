@@ -12,4 +12,4 @@ $img_dir = '/assets/img/';
     <?php include 'default-head.php'; ?>
 </head>
 
-<body>
+<body class="<?= $body_class ?? '' ?> ">

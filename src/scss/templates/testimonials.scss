@@ -46,6 +46,12 @@
 
   padding: $margin-2xl 0;
   overflow: hidden;
+  
+  
+  // @media all and (max-width: 280px) {
+  //   padding: $margin-2xl $margin-view-xs;
+  // }
+
 
   &::before {
     content: "";
@@ -106,7 +112,6 @@
 
       @media all and (max-width: 576px) {
         padding: 0 0 $margin-xl;
-        min-height: unset;
       }
 
       flex-flow: column;

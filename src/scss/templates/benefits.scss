@@ -17,6 +17,7 @@
     h2 {
       font-weight: 700;
       // font-size: $heading-2;
+      margin-bottom: $margin-md;
     }
 
     p {
@@ -99,6 +100,11 @@
   }
 }
 
+@media all and (max-width: 1400px) {
+  .benefits .inner-benefits .benefit {
+    gap: $margin-xl;
+  }
+}
 @media all and (max-width: 992px) {
   .benefits {
     .container > .content {
@@ -195,12 +201,15 @@
 
 @media all and (max-width: 576px) {
   .benefits {
+    .container > .content h2 {
+      margin-bottom: $margin-lg;
+    }
     .inner-benefits {
       .benefit {
         img {
           margin-left: calc(-1 * $margin-view);
           min-width: unset;
-          width: calc(300px + $margin-view);
+          width: calc(320px + $margin-view);
           max-width: calc(100vw - $margin-view);
         }
         &:nth-child(2n) {
@@ -225,6 +234,41 @@
 
       p {
         font-size: $text-4;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 350px) {
+  .benefits {
+
+    .inner-benefits .benefit {
+      img {
+        margin-left: calc(-1 * $margin-view-xs);
+        width: calc(100%);
+        max-width: calc(100vw - $margin-view-xs);
+      }
+      &:nth-child(2n) {
+        img {
+          margin-right: calc(-1 * $margin-view-xs);
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 280px) {
+  .benefits {
+
+    .inner-benefits .benefit {
+      img {
+        margin-left: calc(-1 * $margin-view-xxs);
+        width: calc(100%);
+        max-width: calc(100vw - $margin-view-xxs);
+      }
+      &:nth-child(2n) {
+        img {
+          margin-right: calc(-1 * $margin-view-xxs);
+        }
       }
     }
   }

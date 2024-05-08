@@ -1,7 +1,7 @@
 <?php $benefits = $blocks['benefits']; ?>
 
-<div class="benefits" id="benefits">
-  <div class="container">
+<div class="benefits">
+  <div class="container" id="benefits">
     <div class="content">
       <h2><?= $benefits['title']; ?></h2>
       <p><?= $benefits['desc']; ?></p>
@@ -18,9 +18,4 @@
       <?php endforeach; ?>
     </div>
   </div>
-</div>
-
-<div class="cta">
-  <h2><?= $benefits['cta_title']; ?></h2>
-  <a href="<?= $benefits['cta_button']['link']; ?>" class="btn btn-primary glow"><?= $benefits['cta_button']['text']; ?></a>
 </div>

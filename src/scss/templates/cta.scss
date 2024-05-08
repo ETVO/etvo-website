@@ -8,10 +8,10 @@
 
   
   h2 {
-    // font-size: $heading-2;
     font-weight: 700;
     max-width: 100%;
     margin: 0 auto $margin-xl;
+    font-size: $heading-2;
   }
 
 }
@@ -21,6 +21,7 @@
     width: unset;
     h2 {
       width: 350px;
+      font-size: $heading-3;
     }
   }
 }
@@ -31,7 +32,7 @@
     padding: 0 calc($margin-view / 2);
     
     h2 {
-      width: 300px;
+      // width: 300px;
     }
     .btn {
       font-size: 1rem;
