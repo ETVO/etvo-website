@@ -49,10 +49,14 @@
 
   .options {
     display: flex;
-    justify-content: center;
-    // flex-flow: row-reverse;
     gap: $margin-sm;
+    
+    @media all and (max-width: 576px) {
+      flex-flow: row-reverse;
+
+    }
     button {
+      flex: 1;
       font-size: 12px;
 
       transition: all 0.1s ease;

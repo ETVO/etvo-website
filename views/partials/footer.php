@@ -2,7 +2,7 @@
   <div class="container">
     <div class="inner-footer">
       <div class="content">
-        <a href="#top"> <img src="/assets/img/brand-white.svg" alt="ETVO Web"></a>
+        <a href="<?= $link_prefix ?>#top"> <img src="/assets/img/brand-white.svg" alt="ETVO Web"></a>
         <h2>Make It Happen</h2>
         <a href="mailto:contact@etvo-web.com" target="_blank">contact@etvo-web.com</a>
       </div>
@@ -16,11 +16,11 @@
       </div>
 
       <div class="links">
-        <a href="#benefits">Benefits</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a href="/privacy-policy/" target="_blank">Privacy Policy</a>
+        <a href="<?= $link_prefix ?>#benefits">Benefits</a>
+        <a href="<?= $link_prefix ?>#testimonials">Testimonials</a>
+        <a href="<?= $link_prefix ?>#faq">FAQ</a>
+        <a href="<?= $link_prefix ?>#contact">Contact</a>
+        <a href="/privacy-policy" target="_blank">Privacy Policy</a>
       </div>
     </div>
   </div>

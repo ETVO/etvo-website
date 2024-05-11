@@ -1,6 +1,8 @@
-<?php 
+<?php
 
 $img_dir = '/assets/img/';
+
+$link_prefix = ($_SERVER['REQUEST_URI'] == HOME_DIR) ? '' : HOME_DIR;
 ?>
 
 <!DOCTYPE html>

@@ -1,14 +1,9 @@
 {
-    "/js/main.js": "/js/main.js",
-    "/js/cookies.js": "/js/cookies.js",
-    "/css/bootstrap.css": "/css/bootstrap.css",
-    "/css/main.css": "/css/main.css",
+    "/main.js": "/main.js",
     "/fonts/bootstrap-icons/bootstrap-icons.css": "/fonts/bootstrap-icons/bootstrap-icons.css",
     "/fonts/bootstrap-icons/bootstrap-icons.json": "/fonts/bootstrap-icons/bootstrap-icons.json",
     "/fonts/bootstrap-icons/bootstrap-icons.min.css": "/fonts/bootstrap-icons/bootstrap-icons.min.css",
     "/fonts/bootstrap-icons/bootstrap-icons.scss": "/fonts/bootstrap-icons/bootstrap-icons.scss",
     "/fonts/bootstrap-icons/fonts/bootstrap-icons.woff": "/fonts/bootstrap-icons/fonts/bootstrap-icons.woff",
-    "/fonts/bootstrap-icons/fonts/bootstrap-icons.woff2": "/fonts/bootstrap-icons/fonts/bootstrap-icons.woff2",
-    "/css/privacy-policy.css": "/css/privacy-policy.css",
-    "/css/landing.css": "/css/landing.css"
+    "/fonts/bootstrap-icons/fonts/bootstrap-icons.woff2": "/fonts/bootstrap-icons/fonts/bootstrap-icons.woff2"
 }

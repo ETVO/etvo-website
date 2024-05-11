@@ -7,6 +7,7 @@ body {
   margin: $margin-xl auto 0;
   width: 600px !important;
   max-width: 100%;
+  // padding: $margin-lg calc($margin-view / 1.25) !important;
 
   .container {
     width: auto;
@@ -15,6 +16,11 @@ body {
     padding: $margin-lg $margin-lg !important;
     border-radius: 0 calc($radius-sm / 3);
     box-shadow: 2px 2px 10px rgba(#001514, 1);
+
+    @media all and (max-width: 576px) {
+      border-radius: 0;
+      padding: $margin-lg $margin-view !important;
+    }
   }
 
   svg {
@@ -22,6 +28,10 @@ body {
     width: auto;
     margin-bottom: 16px;
     opacity: .9;
+    
+    @media all and (max-width: 576px) {
+      margin-left: $margin-view;
+    }
 
     path {
       fill: var(--bs-light);

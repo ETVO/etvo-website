@@ -4,7 +4,8 @@
   "description": "etvo's cool website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "development": "cross-env NODE_ENV=development webpack --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production webpack --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "cross-env": "^7.0.3",
     "laravel-mix": "^6.0.49"
   },
   "keywords": [],

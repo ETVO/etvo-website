@@ -1,5 +1,5 @@
 .benefits {
-  padding-top: $margin-3xl;
+  padding-top: calc($margin-3xl / 2);
 
   position: relative;
   z-index: 0;
@@ -7,22 +7,24 @@
   background: linear-gradient(rgba(#ec4e20, 0.15), rgba(#ec4e20, 0));
 
   color: var(--bs-body);
+  .container {
+    padding-top: calc($margin-3xl / 2);
+    & > .content {
+      width: 650px;
+      max-width: 100%;
+      margin: auto;
+      text-align: center;
+      margin-bottom: $margin-2xl;
+      h2 {
+        font-weight: 700;
+        // font-size: $heading-2;
+        margin-bottom: $margin-md;
+      }
 
-  .container > .content {
-    width: 650px;
-    max-width: 100%;
-    margin: auto;
-    text-align: center;
-    margin-bottom: $margin-2xl;
-    h2 {
-      font-weight: 700;
-      // font-size: $heading-2;
-      margin-bottom: $margin-md;
-    }
-
-    p {
-      font-weight: 300;
-      // font-size: $text-2;
+      p {
+        font-weight: 300;
+        // font-size: $text-2;
+      }
     }
   }
 
@@ -226,14 +228,19 @@
 
 @media all and (max-width: 450px) {
   .benefits {
+    $padding-top: calc($radius-md + $margin-negative + $margin-2xl);
     margin-top: calc(-1 * $radius-md);
-    padding-top: calc($radius-md + $margin-negative + $margin-2xl);
+    padding-top: calc($padding-top / 2);
 
-    .container > .content {
-      text-align: left;
+    .container {
+      padding-top: calc($padding-top / 2);
+  
+      & > .content {
+        text-align: left;
 
-      p {
-        font-size: $text-4;
+        p {
+          font-size: $text-4;
+        }
       }
     }
   }
@@ -241,7 +248,6 @@
 
 @media all and (max-width: 350px) {
   .benefits {
-
     .inner-benefits .benefit {
       img {
         margin-left: calc(-1 * $margin-view-xs);
@@ -258,7 +264,6 @@
 }
 @media all and (max-width: 280px) {
   .benefits {
-
     .inner-benefits .benefit {
       img {
         margin-left: calc(-1 * $margin-view-xxs);

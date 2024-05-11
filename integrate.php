@@ -13,5 +13,5 @@ define(
     (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off')
         ? 'https'
         : 'http'
-        . '://' . $_SERVER['SERVER_NAME'] . '/' . HOME_DIR
+        . '://' . $_SERVER['SERVER_NAME'] . HOME_DIR
 );

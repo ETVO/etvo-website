@@ -28,7 +28,6 @@ $h6-font-size: $font-size-base;
 
 $btn-font-size: $font-size-base * 1.125;
 
-@import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
@@ -41,7 +40,7 @@ $btn-font-size: $font-size-base * 1.125;
 @import "~bootstrap/scss/images";
 @import "~bootstrap/scss/containers";
 @import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/tables";
+// @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/transitions";

@@ -1,14 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
 
   if (document.cookie.includes('cookieConsent=true')) {
-    console.log('yes :)');
-    cookies();
+    console.log('You have consented the use of cookies.');
+    facebookAPI()
+    googleAPI()
   }
-  else if (document.cookie.includes('cookieConsent=')) {
-    console.log('no :(');
+  else if (localStorage.getItem('userHasRejectedCookies')) {
+    console.log('You have not consented the use of cookies.');
   }
   else {
-    console.log('let\'s see!');
     showCookieBanner();
   }
 
@@ -16,18 +22,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function facebookAPI() {
+  //  Meta Pixel Code
+  !function (f, b, e, v, n, t, s) {
+    if (f.fbq) return; n = f.fbq = function () {
+      n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+    n.queue = []; t = b.createElement(e); t.async = !0;
+    t.src = v; s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1169154777590374');
+  fbq('track', 'PageView');
 }
 function googleAPI() {
-
-}
-function hubspotAPI() {
-
+  gtag('consent', 'update', {
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'ad_storage': 'granted',
+    'analytics_storage': 'granted'
+  });
 }
 
 function cookies() {
-  facebookAPI()
-  googleAPI()
-  hubspotAPI()
 }
 
 // Check if user has consented to the use of cookies
@@ -43,16 +62,25 @@ function getCurrentTimestamp() {
 // Function to handle user's consent to cookies
 function cookiesConsent() {
   var timestamp = getCurrentTimestamp();
-  document.cookie = 'cookieConsent=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; timestamp=' + timestamp;
+  document.cookie = 'cookieConsent=true; samesite=lax; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; timestamp=' + timestamp;
+
   // Additional logic for handling cookie consent (e.g., loading tracking scripts)
   console.log('User has consented to the use of cookies at: ' + timestamp);
+
+  gtag('consent', 'update', {
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'ad_storage': 'granted',
+    'analytics_storage': 'granted'
+  });
 }
 
 // Function to handle user's rejection of cookies
 function cookiesReject() {
   var timestamp = getCurrentTimestamp();
-  document.cookie = 'cookieConsent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; timestamp=' + timestamp;
-  // Additional logic for handling rejection of cookies (e.g., disabling tracking scripts)
+  localStorage.setItem('userHasRejectedCookies', 'yes :( at this time: ' + timestamp);
+  // document.cookie = 'cookieConsent=false; samesite=lax; expires=Thu, 31 Dec 9999 23:59:59 GMT; path=/; timestamp=' + timestamp;
+  // // Additional logic for handling rejection of cookies (e.g., disabling tracking scripts)
   console.log('User has rejected the use of cookies at: ' + timestamp);
 }
 
@@ -67,13 +95,14 @@ function showCookieBanner() {
 }
 
 function hideCookieBanner() {
+  let delay = 200;
   cookieBanner.animate({ opacity: [1, 0] }, {
-    duration: 400, iterations: 1,
+    duration: delay, iterations: 1,
     easing: "ease"
   });
-  setTimeout(()=> {
+  setTimeout(() => {
     cookieBanner.style = '';
-  }, 400)
+  }, delay)
 }
 
 const cookieBanner = document.getElementById('cookieBanner');
@@ -85,6 +114,7 @@ const acceptCookiesBtn = document.getElementById('acceptCookies');
 collapseLearnMore.addEventListener('shown.bs.collapse', event => {
   learnMoreCookiesBtn.style = 'display: none';
   rejectCookiesBtn.style = 'display: block';
+  acceptCookiesBtn.innerHTML = 'Accept';
 })
 
 rejectCookiesBtn.addEventListener('click', function () {
