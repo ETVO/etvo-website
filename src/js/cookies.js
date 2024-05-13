@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied'
-  });
+
 
   if (document.cookie.includes('cookieConsent=true')) {
+    cookies();
     console.log('You have consented the use of cookies.');
-    facebookAPI()
-    googleAPI()
   }
   else if (localStorage.getItem('userHasRejectedCookies')) {
     console.log('You have not consented the use of cookies.');
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
   }
   else {
     showCookieBanner();
@@ -20,22 +20,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 })
 
+function cookies() {
+  facebookAPI();
+  googleAPI();
+}
+
 
 function facebookAPI() {
   //  Meta Pixel Code
-  !function (f, b, e, v, n, t, s) {
-    if (f.fbq) return; n = f.fbq = function () {
-      n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-    };
-    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-    n.queue = []; t = b.createElement(e); t.async = !0;
-    t.src = v; s = b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t, s)
-  }(window, document, 'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1169154777590374');
-  fbq('track', 'PageView');
+  if (typeof fbq === 'undefined') {
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1169154777590374');
+    fbq('track', 'PageView');
+  }
+  else {
+    fbq('track', 'PageView');
+  }
+  
 }
 function googleAPI() {
   gtag('consent', 'update', {
@@ -44,9 +55,6 @@ function googleAPI() {
     'ad_storage': 'granted',
     'analytics_storage': 'granted'
   });
-}
-
-function cookies() {
 }
 
 // Check if user has consented to the use of cookies
@@ -67,12 +75,7 @@ function cookiesConsent() {
   // Additional logic for handling cookie consent (e.g., loading tracking scripts)
   console.log('User has consented to the use of cookies at: ' + timestamp);
 
-  gtag('consent', 'update', {
-    'ad_user_data': 'granted',
-    'ad_personalization': 'granted',
-    'ad_storage': 'granted',
-    'analytics_storage': 'granted'
-  });
+  cookies();
 }
 
 // Function to handle user's rejection of cookies

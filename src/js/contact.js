@@ -1,26 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
     var contactForm = document.getElementById('contact-form');
 
+    const formMessage = document.getElementById('form-message');
+    const spinner = document.getElementById('spinner');
+
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent form submission
-
-        var formData = new FormData(contactForm); // Get form data
-
-        var formMessage = document.getElementById('form-message');
-        var spinner = document.getElementById('spinner');
 
         fadeOut(formMessage);
         fadeIn(spinner);
 
+        var formData = new FormData(contactForm); // Get form data
+
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
+                fadeOut(spinner);
+                clearControlFeedback();
                 if (xhr.status === 200) {
                     var response = xhr.responseText;
-                    console.log(response);
-
-                    fadeOut(spinner);
-                    clearControlFeedback();
 
                     var fields = document.querySelectorAll('.fields');
                     fields.forEach(function (field) {
@@ -31,9 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     contactForm.reset(); // Reset form fields
                 } else {
-                    console.error(xhr.status, xhr.statusText);
-                    fadeOut(spinner);
-                    clearControlFeedback();
 
                     if (isJSONObject(xhr.responseText)) {
                         var errors = JSON.parse(xhr.responseText);
@@ -57,14 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function fadeOut(element) {
         element.style.opacity = 0;
-        setTimeout(function () {
+        var intervalId = setInterval(function () {
             element.style.display = 'none';
+            clearInterval(intervalId);
         }, 200);
     }
 
     function fadeIn(element) {
-        element.style.opacity = 1;
         element.style.display = 'block';
+        element.style.opacity = 1;
     }
 
     function clearControlFeedback() {
@@ -75,10 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showFormMessage(type, message) {
-        var formMessage = document.getElementById('form-message');
-        formMessage.classList.add(type);
-        formMessage.style.display = 'block';
+        formMessage.setAttribute('class', type);
         formMessage.querySelector('.message').innerHTML = message;
+        fadeIn(formMessage)
     }
 
     function isJSONObject(strData) {
@@ -109,5 +104,65 @@ document.addEventListener("DOMContentLoaded", function () {
                 selectElement.style.borderColor = "rgba(0, 21, 20, " + borderOpacity + ")"; // Change border color
             }
         });
+
+        // watch for a specific class change
+        let classWatcher = new ClassWatcher(selectElement, 'is-invalid', setBorderInvalid, unsetBorderInvalid);
+
+        function setBorderInvalid() {
+            selectElement.style.borderColor = "#dc3545"; // Change border color
+        }
+        function unsetBorderInvalid() {
+            var selectedOption = selectElement.options[selectElement.selectedIndex];
+            if (selectedOption != defaultOption) {
+                selectElement.style.borderColor = "rgba(0, 21, 20, " + borderOpacity + ")"; // Change border color
+            }
+            else {
+                selectElement.style.borderColor = "rgba(0, 21, 20, " + borderOpacity / placeholderOpacity + ")"; // Change border opacity   
+            }
+        }
     });
 });
+
+class ClassWatcher {
+
+    constructor(targetNode, classToWatch, classAddedCallback, classRemovedCallback) {
+        this.targetNode = targetNode
+        this.classToWatch = classToWatch
+        this.classAddedCallback = classAddedCallback
+        this.classRemovedCallback = classRemovedCallback
+        this.observer = null
+        this.lastClassState = targetNode.classList.contains(this.classToWatch)
+
+        this.init()
+    }
+
+    init() {
+        this.observer = new MutationObserver(this.mutationCallback)
+        this.observe()
+    }
+
+    observe() {
+        this.observer.observe(this.targetNode, { attributes: true })
+    }
+
+    disconnect() {
+        this.observer.disconnect()
+    }
+
+    mutationCallback = mutationsList => {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                let currentClassState = mutation.target.classList.contains(this.classToWatch)
+                if (this.lastClassState !== currentClassState) {
+                    this.lastClassState = currentClassState
+                    if (currentClassState) {
+                        this.classAddedCallback()
+                    }
+                    else {
+                        this.classRemovedCallback()
+                    }
+                }
+            }
+        }
+    }
+}

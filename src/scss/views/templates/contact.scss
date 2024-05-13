@@ -29,6 +29,41 @@
     .form {
       margin-bottom: $margin-xl;
       text-align: left;
+
+      #form-message {
+        display: none;
+        opacity: 0;
+
+        transition: opacity .2s;
+
+        &.success {
+          background-color: #1e8851;
+        }
+
+        &.error {
+          color: var(--bs-red);
+          background-color: var(--bs-light);
+          border: solid 1px var(--bs-red);
+        }
+      }
+
+      .fields > * {
+        transition: opacity .2s;
+      }
+      
+      .invalid-feedback {
+          font-weight: 400;
+
+          letter-spacing: 0.4px;
+          font-size: 0.85rem;
+      }
+
+      #spinner {
+        opacity: 0;
+        margin-left: $margin-sm;
+        transform-origin: 48% 45%;
+        transition: opacity .2s;
+      }
     }
 
     h3 {

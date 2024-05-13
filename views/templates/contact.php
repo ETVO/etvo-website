@@ -36,6 +36,9 @@ $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP
             <?php
             render_form_fields($contact_model['fields']);
             ?>
+            <?php
+            render_honeypot($contact_model['honeypot']);
+            ?>
             <button type="submit" class="btn btn-primary">
               SEND
               <span class="bi-arrow-clockwise" id="spinner" style="display: none;"></span>

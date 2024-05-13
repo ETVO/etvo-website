@@ -1,5 +1,10 @@
 {
-    "/main.js": "/main.js",
+    "/js/main.js": "/js/main.js",
+    "/js/cookies.js": "/js/cookies.js",
+    "/css/privacy-policy.css": "/css/privacy-policy.css",
+    "/css/landing.css": "/css/landing.css",
+    "/css/bootstrap.css": "/css/bootstrap.css",
+    "/css/main.css": "/css/main.css",
     "/fonts/bootstrap-icons/bootstrap-icons.css": "/fonts/bootstrap-icons/bootstrap-icons.css",
     "/fonts/bootstrap-icons/bootstrap-icons.json": "/fonts/bootstrap-icons/bootstrap-icons.json",
     "/fonts/bootstrap-icons/bootstrap-icons.min.css": "/fonts/bootstrap-icons/bootstrap-icons.min.css",

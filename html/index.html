@@ -231,16 +231,16 @@
               </div>
               <div class="fields">
                 <input type="hidden" name="actual_link" value="https://etvo-web.com/">
-                <div class="mb-3"><input type='text' name='full_name' class='form-control' required placeholder='Full Name'>
+                <div class="mb-3"><input type='text' name='name' class='form-control' required placeholder='Full Name' autocomplete="name">
                   <div class="invalid-feedback"></div>
                 </div>
-                <div class="mb-3"><input type='email' name='email' class='form-control' required placeholder='Email'>
+                <div class="mb-3"><input type='email' name='email' class='form-control' required placeholder='Email' autocomplete="email">
                   <div class="invalid-feedback"></div>
                 </div>
-                <div class="mb-3"><input type='tel' name='phone' class='form-control' required placeholder='Phone'>
+                <div class="mb-3"><input type='tel' name='phone' class='form-control' placeholder='Phone' autocomplete="tel">
                   <div class="invalid-feedback"></div>
                 </div>
-                <div class="mb-3"><select class='form-select' required placeholder='How can we help you?'>
+                <div class="mb-3"><select name='status' class='form-select' required placeholder='How can we help you?'>
                     <option selected disabled>How can we help you?</option>
                     <option value='I want to develop my website'>I want to develop my website</option>
                     <option value='I&#039;m not sure where to start and need guidance'>I&#039;m not sure where to start
@@ -259,7 +259,10 @@
                 <div class="mb-3"><textarea name='message' class='form-control' rows="3"
                     placeholder='Anything to add?'></textarea>
                   <div class="invalid-feedback"></div>
-                </div> <button type="submit" class="btn btn-primary">
+                </div> <input type='number' name='honey' class='form-control' required
+                  style="margin: 0; height: 16px; opacity: 0; cursor: default;" aria-hidden="true"
+                  placeholder='Fax Number'>
+                <div class="invalid-feedback"></div> <button type="submit" class="btn btn-primary">
                   SEND
                   <span class="bi-arrow-clockwise" id="spinner" style="display: none;"></span>
                 </button>
